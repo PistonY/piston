@@ -3,4 +3,5 @@
 # @Contact : pistonyang@gmail.com
 # @Date  : 18-9-18
 
-from . import util
+name = "piston"
+from pistonlib import util
