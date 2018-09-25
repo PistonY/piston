@@ -2,6 +2,7 @@
 # @Author: Piston.Y
 # @Contact : pistonyang@gmail.com
 # @Date  : 18-9-18
+import os
 
 
 def format_time(prev_time, cur_time) -> str:
@@ -23,3 +24,8 @@ def rescale(x, x_min=None, x_max=None):
     if x_max is None:
         x_max = x.max().asscalar()
     return (x - x_min) / (x_max - x_min)
+
+
+def checkout_dir(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
