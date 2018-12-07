@@ -3,6 +3,10 @@
 # @Contact : pistonyang@gmail.com
 # @Date  : 18-9-18
 import os
+import logging
+
+__all__ = ['format_time', 'inf_train_gen',
+           'rescale', 'checkout_dir', 'setup_logger']
 
 
 def format_time(prev_time, cur_time) -> str:
@@ -26,6 +30,22 @@ def rescale(x, x_min=None, x_max=None):
     return (x - x_min) / (x_max - x_min)
 
 
-def checkout_dir(path):
+def checkout_dir(path: str):
     if not os.path.exists(path):
         os.makedirs(path)
+
+
+def setup_logger(log_file_path):
+    """
+    set up logger
+    :param log_file_path: xx/xxx.log
+    :return: logger
+    """
+
+    logging.basicConfig()
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    log_file_path = log_file_path
+    fh = logging.FileHandler(log_file_path)
+    logger.addHandler(fh)
+    return logger

@@ -6,6 +6,8 @@
 from mxnet.metric import EvalMetric, check_label_shapes
 import numpy as np
 
+__all__ = ['CS', 'e_error']
+
 
 class CS(EvalMetric):
     def __init__(self, n, name='CS', **kwargs):

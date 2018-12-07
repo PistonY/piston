@@ -10,9 +10,9 @@ with open("README.md", "r") as fh:
 
 setup(
     name='pistonlib',
-    version='0.0.1',
+    version='0.0.1a',
     platforms='any',
-    keywords=('deep learning', 'useful tools'),
+    keywords=('deep learning', 'personal useful tools'),
     description='Piston deep learning tools.',
     license='MIT License',
 
